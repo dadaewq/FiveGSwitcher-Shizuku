@@ -16,6 +16,7 @@
         <activity
             android:name=".MainActivity"
             android:excludeFromRecents="true"
+            android:exported="true"
             android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,6 +33,7 @@
 
         <service
             android:name=".SwitcherTileService"
+            android:exported="true"
             android:icon="@drawable/ic_5g_white_24dp"
             android:label="@string/five_g_tile_label"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
@@ -44,6 +46,13 @@
                 android:value="true" />
         </service>
 
+        <provider
+            android:name="rikka.shizuku.ShizukuProvider"
+            android:authorities="${applicationId}.shizuku"
+            android:enabled="true"
+            android:exported="true"
+            android:multiprocess="false"
+            android:permission="android.permission.INTERACT_ACROSS_USERS_FULL" />
     </application>
 
 </manifest>

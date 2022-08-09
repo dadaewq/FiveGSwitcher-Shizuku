@@ -8,7 +8,8 @@ import java.lang.reflect.Member
 import java.lang.reflect.Method
 import java.lang.reflect.Modifier
 import java.lang.reflect.Proxy
-import java.util.Collections
+import java.util.*
+import kotlin.Comparator
 
 internal class ReflectUtils(private val type: Class<*>, private val any: Any) {
 
@@ -56,8 +57,8 @@ internal class ReflectUtils(private val type: Class<*>, private val any: Any) {
         private fun property(string: String): String {
             return when (string.length) {
                 0 -> ""
-                1 -> string.toLowerCase()
-                else -> string.substring(0, 1).toLowerCase() + string.substring(1)
+                1 -> string.lowercase(Locale.getDefault())
+                else -> string.substring(0, 1).lowercase(Locale.ROOT) + string.substring(1)
             }
         }
     }

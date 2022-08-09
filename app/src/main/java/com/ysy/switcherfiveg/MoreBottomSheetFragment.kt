@@ -1,15 +1,12 @@
 package com.ysy.switcherfiveg
 
 import android.app.Dialog
-import android.content.BroadcastReceiver
-import android.content.Context
-import android.content.DialogInterface
-import android.content.Intent
-import android.content.IntentFilter
+import android.content.*
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.preference.EditTextPreference
 import androidx.preference.Preference
@@ -18,6 +15,7 @@ import androidx.preference.SwitchPreferenceCompat
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.ysy.switcherfiveg.FiveGUtils.convertRuntimeName
+import rikka.shizuku.Shizuku
 import java.net.URLEncoder
 
 class MoreBottomSheetFragment : BottomSheetDialogFragment() {
@@ -84,8 +82,14 @@ class MoreBottomSheetFragment : BottomSheetDialogFragment() {
 
             findPreference<SwitchPreferenceCompat>(SP_KEY_ENABLE_5G)?.apply {
                 setOnPreferenceChangeListener { _, newValue ->
-                    FiveGUtils.setUserFiveGEnabled(newValue as Boolean)
-                    true
+                    if (!FiveGUtils.isShizukuOk()) {
+                        Toast.makeText(this.context, "please check Shizuku/Sui", Toast.LENGTH_SHORT).show()
+                        Shizuku.requestPermission(0)
+                        false
+                    } else {
+                        FiveGUtils.setUserFiveGEnabled(newValue as Boolean)
+                        true
+                    }
                 }
                 isChecked = FiveGUtils.isUserFiveGEnabled()
                 isEnabled = m5GSupport

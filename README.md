@@ -1,5 +1,6 @@
-# FiveGSwitcher
+# FiveGSwitcher-Shizuku
 
+## 需要[Shizuku](https://shizuku.rikka.app)/[Sui](https://github.com/RikkaApps/Sui)
 ### 下载
 
 <a href='https://play.google.com/store/apps/details?id=com.ysy.switcherfiveg&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://raw.githubusercontent.com/ysy950803/FiveGSwitcher/master-3/google-play-badge.png'/></a>

@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">FiveGSwitcher</string>
+    <string name="app_name">FiveGSwitcher·</string>
 
-    <string name="five_g_tile_label">5G Switcher</string>
-    <string name="settings_main_title_not_support">Sorry, this device does not support 5g</string>
+    <string name="five_g_tile_label">5G Switcher·</string>
+    <string name="settings_main_title_not_support">This device may not support 5g</string>
     <string name="settings_enable_5g">Turn on/off 5G</string>
     <string name="settings_enable_5g_summary">When the shortcut is not responding, it can be toggled here</string>
     <string name="settings_to_mobile_net_settings">Mobile Network Settings</string>
