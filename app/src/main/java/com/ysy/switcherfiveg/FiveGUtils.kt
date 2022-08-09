@@ -1,9 +1,10 @@
 package com.ysy.switcherfiveg
 
+import FiveGUtilsBase
 import android.util.Base64
 import android.util.Log
 
-internal object FiveGUtils {
+object FiveGUtils: FiveGUtilsBase() {
 
     private const val TAG = "FiveGUtils"
     private val consts by lazy { getConsts().split(";") }
@@ -23,25 +24,25 @@ internal object FiveGUtils {
         false
     }
 
-    fun setUserFiveGEnabled(enable: Boolean) {
-        try {
-            ReflectUtils.reflect(className)
-                .method(method1)
-                .method(method3, enable)
-        } catch (e: Exception) {
-            Log.e(TAG, "$method3 $enable", e)
-        }
-    }
-
-    fun isUserFiveGEnabled(): Boolean = try {
-        ReflectUtils.reflect(className)
-            .method(method1)
-            .method(method4)
-            .get()
-    } catch (e: Exception) {
-        Log.e(TAG, method4, e)
-        false
-    }
+//    fun setUserFiveGEnabled(enable: Boolean) {
+//        try {
+//            ReflectUtils.reflect(className)
+//                .method(method1)
+//                .method(method3, enable)
+//        } catch (e: Exception) {
+//            Log.e(TAG, "$method3 $enable", e)
+//        }
+//    }
+//
+//    fun isUserFiveGEnabled(): Boolean = try {
+//        ReflectUtils.reflect(className)
+//            .method(method1)
+//            .method(method4)
+//            .get()
+//    } catch (e: Exception) {
+//        Log.e(TAG, method4, e)
+//        false
+//    }
 
     fun String.convertRuntimeName() = String(Base64.decode(this, Base64.DEFAULT))
 

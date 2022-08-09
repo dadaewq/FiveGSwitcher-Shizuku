@@ -7,7 +7,9 @@ import android.os.IBinder
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
 import android.util.Log
+import android.widget.Toast
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import rikka.shizuku.Shizuku
 
 class SwitcherTileService : TileService() {
 
@@ -48,6 +50,11 @@ class SwitcherTileService : TileService() {
     }
 
     private fun toggle() {
+        if (!FiveGUtils.isShizukuOk()) {
+            Toast.makeText(this, "please check Shizuku/Sui", Toast.LENGTH_SHORT).show()
+            Shizuku.requestPermission(0)
+            return
+        }
         val newEnabled = !FiveGUtils.isUserFiveGEnabled()
         FiveGUtils.setUserFiveGEnabled(newEnabled)
         updateTile(newEnabled)

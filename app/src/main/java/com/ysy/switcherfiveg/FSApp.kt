@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
 import androidx.preference.PreferenceManager
+import org.lsposed.hiddenapibypass.HiddenApiBypass
 
 class FSApp : Application() {
 
@@ -25,6 +26,7 @@ class FSApp : Application() {
 
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)
+        HiddenApiBypass.addHiddenApiExemptions("L")
         CONTEXT = this
         initLabel()
     }

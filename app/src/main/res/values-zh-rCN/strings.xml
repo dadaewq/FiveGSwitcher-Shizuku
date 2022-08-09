@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">5G开关</string>
+    <string name="app_name">5G开关·</string>
 
-    <string name="five_g_tile_label">5G开关</string>
-    <string name="settings_main_title_not_support">抱歉，本设备不支持5G</string>
+    <string name="five_g_tile_label">5G开关·</string>
+    <string name="settings_main_title_not_support">本设备可能不支持5G</string>
     <string name="settings_enable_5g">开启/关闭5G</string>
     <string name="settings_enable_5g_summary">快捷开关无响应时，可在此处切换</string>
     <string name="settings_to_mobile_net_settings">移动网络设置</string>
